@@ -72,43 +72,26 @@ namespace Arreglos.Clases
 
         }
 
-        public void CrearArray(int longitud, int multiplo = 0)
+        public void CrearArray(int longitud, int multiplo)
         {
-            if(longitud != 0) 
-            { 
-                int[] multiplos = new int[longitud];
-
-                Console.WriteLine("Con que multiplo quieres llenar el array?");
-                multiplo = Convert.ToInt32(Console.ReadLine());
-
-                for (int x = 0; x<multiplos.Length; x++)
-                {
-
-                    multiplos[x] = multiplo * (x + 1);
-
-                }
-
-            }
-            else
+            if (longitud <= 0)
             {
-                Console.WriteLine("Minimo una longitud de 1");
+                Console.WriteLine("La longitud debe ser mayor que 0 loco");
                 return;
             }
 
-            
-        }
+            int[] multiplos = new int[longitud];
 
-        public void MostrarArray(int[] array)
-        {
-            if(array != null)
+            for (int x = 0; x < multiplos.Length; x++)
             {
-
-
-
+                multiplos[x] = multiplo * (x + 1);
             }
 
-
-
+            Console.WriteLine("Los multiplos del número ingresado son:");
+            foreach (int numero in multiplos)
+            {
+                Console.WriteLine(numero);
+            }
         }
 
 
